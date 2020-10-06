@@ -81,6 +81,10 @@ public class DoodleView extends View {
         invalidate();
     }
 
+    public int getBackgroundColor() {
+        return backgroundColor;
+    }
+
     public void setDrawingColor(int color) {
         drawingColor = color;
         paintLine.setColor(color);

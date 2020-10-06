@@ -45,7 +45,7 @@ public class BackgroundColorDialogFragment extends DialogFragment {
         bgBlueSeekBar.setOnSeekBarChangeListener(colorChangedListener);
 
         final DoodleView doodleView = getDoodleFragment().getDoodleView();
-        color = doodleView.getDrawingColor();
+        color = doodleView.getBackgroundColor();
         bgAlphaSeekBar.setProgress(Color.alpha(color));
         bgRedSeekBar.setProgress(Color.red(color));
         bgGreenSeekBar.setProgress(Color.green(color));
