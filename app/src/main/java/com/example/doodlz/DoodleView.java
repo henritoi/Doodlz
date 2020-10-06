@@ -34,6 +34,18 @@ public class DoodleView extends View {
     private final Map<Integer, Path> pathMap = new HashMap<>();
     private final Map<Integer, Point> previousPointMap = new HashMap<>();
 
+    // For new actions
+    private DrawAction drawAction = DrawAction.DRAW;
+
+    // Store colors for draw and erase
+    private int backgroundColor = Color.WHITE;
+    private int drawingColor = Color.BLACK;
+
+    // Store widths for draw and erase
+    private int lineWidth;
+    private int eraserWidth;
+
+
     public DoodleView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         paintScreen = new Paint();
@@ -57,30 +69,66 @@ public class DoodleView extends View {
         pathMap.clear();
         previousPointMap.clear();
         bitmap.eraseColor(Color.WHITE);
+        backgroundColor = Color.WHITE;
+        invalidate();
+    }
+
+    public void setBackgroundColor(int color) {
+        pathMap.clear();
+        previousPointMap.clear();
+        bitmap.eraseColor(color);
+        backgroundColor = color;
         invalidate();
     }
 
     public void setDrawingColor(int color) {
+        drawingColor = color;
         paintLine.setColor(color);
     }
 
     public int getDrawingColor() {
-        return paintLine.getColor();
+        return drawingColor;
     }
 
     public void setLineWidth(int width) {
+        lineWidth = width;
         paintLine.setStrokeWidth(width);
     }
 
     public int getLineWidth() {
-        return (int) paintLine.getStrokeWidth();
+        return lineWidth;
+    }
+
+    public void setEraserWidth(int width) {
+        eraserWidth = width;
+        paintLine.setStrokeWidth(width);
+    }
+
+    public int getEraserWidth() {
+        return eraserWidth;
+    }
+
+    public void setDrawAction(DrawAction action) {
+        this.drawAction = action;
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         canvas.drawBitmap(bitmap, 0, 0, paintScreen);
-
-        for (Integer key : pathMap.keySet()) canvas.drawPath(pathMap.get(key), paintLine);
+        switch(drawAction) {
+            case DRAW:
+                paintLine.setColor(drawingColor);
+                for (Integer key : pathMap.keySet()) canvas.drawPath(pathMap.get(key), paintLine);
+                break;
+            case ERASER:
+                paintLine.setColor(backgroundColor);
+                for (Integer key : pathMap.keySet()) canvas.drawPath(pathMap.get(key), paintLine);
+                break;
+            case ELLIPSE:
+                break;
+            case RECTANGLE:
+                break;
+        }
     }
 
     @Override

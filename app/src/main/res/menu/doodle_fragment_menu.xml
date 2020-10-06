@@ -2,25 +2,52 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/rectangle"
+        android:title="@string/menuitem_color"
+        android:icon="@drawable/ic_rectangle_white_24"
+        app:showAsAction="always">
+    </item>
+
+    <item
+        android:id="@+id/ellipse"
+        android:title="@string/menuitem_color"
+        android:icon="@drawable/ic_circle_white_24"
+        app:showAsAction="always">
+    </item>
+
+    <item
         android:id="@+id/color"
         android:title="@string/menuitem_color"
         android:icon="@drawable/ic_palette_white_24dp"
-        app:showAsAction="ifRoom">
+        app:showAsAction="always">
+    </item>
+
+    <item
+        android:id="@+id/eraser"
+        android:title="@string/menuitem_eraser"
+        android:icon="@drawable/ic_eraser_white_24dp"
+        app:showAsAction="always">
+    </item>
+
+    <item
+        android:id="@+id/background_color"
+        android:title="@string/menuitem_background_color"
+        android:icon="@drawable/ic_format_color_fill_white_24dp"
+        app:showAsAction="always">
     </item>
 
     <item
         android:id="@+id/line_width"
         android:title="@string/menuitem_line_width"
         android:icon="@drawable/ic_brush_white_24dp"
-        app:showAsAction="ifRoom">
+        app:showAsAction="always">
     </item>
 
     <item
         android:id="@+id/delete_drawing"
-        android:title="@string/menuitem_delete"
         android:icon="@drawable/ic_delete_white_24dp"
-        app:showAsAction="ifRoom">
-    </item>
+        android:title="@string/menuitem_delete"
+        app:showAsAction="ifRoom"></item>
 
     <item
         android:id="@+id/save"

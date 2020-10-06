@@ -131,8 +131,27 @@ public class MainFragment extends Fragment {
                 ColorDialogFragment colorDialogFragment = new ColorDialogFragment();
                 colorDialogFragment.show(getFragmentManager(), "color dialog");
                 return true;
+            case R.id.rectangle:
+                Log.d(TAG, "onOptionsItemSelected: Rectangle");
+                // Set drawing action to rectangle
+                doodleView.setDrawAction(DrawAction.RECTANGLE);
+                return true;
+            case R.id.ellipse:
+                Log.d(TAG, "onOptionsItemSelected: Ellipse");
+                // Set drawing action to ellipse
+                doodleView.setDrawAction(DrawAction.ELLIPSE);
+                return true;
+            case R.id.eraser:
+                Log.d(TAG, "onOptionsItemSelected: Eraser");
+                // Set drawing action to eraser
+                doodleView.setDrawAction(DrawAction.ERASER);
+                EraserWidthDialogFragment eraserWidthDialogFragment = new EraserWidthDialogFragment();
+                eraserWidthDialogFragment.show(getFragmentManager(), "line width dialog");
+                return true;
             case R.id.line_width:
                 Log.d(TAG, "onOptionsItemSelected: Line Width");
+                // Set drawing action to draw
+                doodleView.setDrawAction(DrawAction.DRAW);
                 LineWidthDialogFragment lineWidthFragment = new LineWidthDialogFragment();
                 lineWidthFragment.show(getFragmentManager(), "line width dialog");
                 return true;
@@ -143,6 +162,16 @@ public class MainFragment extends Fragment {
             case R.id.save:
                 Log.d(TAG, "onOptionsItemSelected: Save");
                 saveImage();
+                return true;
+            case R.id.background_color:
+                Log.d(TAG, "onOptionsItemSelected: Background");
+                BackgroundColorDialogFragment backgroundColorDialogFragment =
+                        new BackgroundColorDialogFragment();
+
+                backgroundColorDialogFragment.show(
+                        getFragmentManager(),
+                        "background color dialog");
+
                 return true;
             case R.id.print:
                 Log.d(TAG, "onOptionsItemSelected: Print");
