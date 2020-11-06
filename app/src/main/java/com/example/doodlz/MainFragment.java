@@ -135,18 +135,22 @@ public class MainFragment extends Fragment {
                 Log.d(TAG, "onOptionsItemSelected: Rectangle");
                 // Set drawing action to rectangle
                 doodleView.setDrawAction(DrawAction.RECTANGLE);
+                RectangleFragment rectangleFragment = new RectangleFragment();
+                rectangleFragment.show(getFragmentManager(), "rectangle dialog");
                 return true;
             case R.id.ellipse:
                 Log.d(TAG, "onOptionsItemSelected: Ellipse");
                 // Set drawing action to ellipse
                 doodleView.setDrawAction(DrawAction.ELLIPSE);
+                EllipseFragment ellipseFragment = new EllipseFragment();
+                ellipseFragment.show(getFragmentManager(), "ellipse dialog");
                 return true;
             case R.id.eraser:
                 Log.d(TAG, "onOptionsItemSelected: Eraser");
                 // Set drawing action to eraser
                 doodleView.setDrawAction(DrawAction.ERASER);
                 EraserWidthDialogFragment eraserWidthDialogFragment = new EraserWidthDialogFragment();
-                eraserWidthDialogFragment.show(getFragmentManager(), "line width dialog");
+                eraserWidthDialogFragment.show(getFragmentManager(), "eraser width dialog");
                 return true;
             case R.id.line_width:
                 Log.d(TAG, "onOptionsItemSelected: Line Width");

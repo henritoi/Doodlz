@@ -17,7 +17,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import androidx.fragment.app.DialogFragment;
 
 public class EraserWidthDialogFragment extends DialogFragment {
-    private static final String TAG = "LineWidthFragment";
+    private static final String TAG = "EraserWidthDialogFragme";
     private ImageView widthImageView;
 
     // luodaan AlertDialog ja palautetaan se
@@ -38,7 +38,7 @@ public class EraserWidthDialogFragment extends DialogFragment {
         widthSeekBar.setProgress(doodleView.getEraserWidth());
 
         builder.setPositiveButton(
-                R.string.button_set_line_width,
+                R.string.button_set_eraser_width,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {

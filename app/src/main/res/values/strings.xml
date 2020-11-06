@@ -9,12 +9,17 @@
     <string name="button_erase">Erase Image</string>
     <string name="button_set_color">Set Color</string>
     <string name="button_set_line_width">Set Line Width</string>
+    <string name="button_set_eraser_width">Set Eraser Width</string>
+    <string name="button_set_settings">Set Settings</string>
     <string name="line_imageview_description">This displays the line thickness</string>
     <string name="eraser_imageview_description">This displays the eraser thickness</string>
+    <string name="rectangle_imageview_description">This displays the rectangle settings</string>
+    <string name="ellipse_imageview_description">This displays the ellipse settings</string>
     <string name="label_alpha">Alpha</string>
     <string name="label_red">Red</string>
     <string name="label_green">Green</string>
     <string name="label_blue">Blue</string>
+    <string name="label_is_filled">Fill</string>
     <string name="menuitem_color">Color</string>
     <string name="menuitem_eraser">Eraser</string>
     <string name="menuitem_delete">Erase Drawing</string>
@@ -31,6 +36,8 @@
     <string name="title_line_width_dialog">Choose Line Width</string>
     <string name="title_eraser_width_dialog">Choose Eraser Width</string>
     <string name="title_background_color_dialog">Choose Background Color</string>
+    <string name="title_rectangle_dialog">Choose Rectangle Settings</string>
+    <string name="title_ellipse_dialog">Choose Ellipse Settings</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
